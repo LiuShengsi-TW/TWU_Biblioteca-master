@@ -81,7 +81,9 @@ public class BibliotecaApp {
                     c = lib.queryCustomersById(customerId);
                     System.out.println("Please input movie's name you want checkout:");
                     movieName = in.next();
-                    lib.checkoutMovie(c, movieName);
+                    System.out.println("Please input amount of the movie you want checkout:");
+                    amount = in.next();
+                    lib.checkoutMovie(c, movieName, amount);
                     break;
                 case 6:
                     System.out.println("Please input the customer's id who want to return book:(c000x)");
@@ -90,7 +92,7 @@ public class BibliotecaApp {
                     c.showAllBooks();
                     System.out.println("Please input the book's id you want to return:(b000x)");
                     bookId = in.next();
-                    System.out.println("Please input amount of the book you want checkout:");
+                    System.out.println("Please input amount of the book you want return:");
                     amount = in.next();
                     lib.returnBook(c, bookId, amount);
                     break;
@@ -101,7 +103,9 @@ public class BibliotecaApp {
                     c.showAllMovies();
                     System.out.println("Please input the movie's name you want to return:");
                     movieName = in.next();
-                    lib.returnMovie(c, movieName);
+                    System.out.println("Please input amount of the movie you want return:");
+                    amount = in.next();
+                    lib.returnMovie(c, movieName, amount);
                     break;
             }
             BibliotecaApp.menu();

@@ -76,5 +76,49 @@ public class ExampleTest {
         assertEquals(result4, true);
     }
 
+    @Test
+    public void testCheckoutMovie() {
+        Movie m2 = new Movie("Avatar","James Cameron","2009","8.6",6);
+        Library lib = new Library();
+        Customers c1 = new Customers("c0001","Rita");
+        boolean result1;
+        boolean result2;
+        boolean result3;
+
+        result1 = lib.checkoutMovie(c1, "Avatar", "3");
+        assertEquals(result1, true);
+
+        result2 = lib.checkoutMovie(c1, "Avatar", "7");
+        assertEquals(result2, false);
+
+        result3 = lib.checkoutMovie(c1, "Avata", "3");
+        assertEquals(result3, false);
+    }
+
+    @Test
+    public void testReturnMovie() {
+        Library lib = new Library();
+        Customers c1 = new Customers("c0001","Rita");
+        boolean result1;
+        boolean result2;
+        boolean result3;
+        boolean result4;
+
+        lib.checkoutMovie(c1, "Avatar", "4");
+
+        result1 = lib.returnMovie(c1, "Avatar", "1");
+        assertEquals(result1, true);
+
+        result2 = lib.returnMovie(c1, "Avatar", "6");
+        assertEquals(result2, false);
+
+        result3 = lib.returnMovie(c1, "Avata", "3");
+        assertEquals(result3, false);
+
+        result4 = lib.returnMovie(c1, "Avatar", "3");
+        assertEquals(result4, true);
+    }
+
+
 
 }

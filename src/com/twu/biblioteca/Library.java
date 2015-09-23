@@ -112,17 +112,15 @@ public class Library {
         return null; // Name isn't equal then return null
     }
 
-    public boolean checkoutMovie(Customers c,String name)
+    public boolean checkoutMovie(Customers c,String name, String amount)
     {
-        Scanner in = new Scanner(System.in);
         Movie m = null;
         m = queryMovieByName(name);
 
         if( m != null )
         {
             System.out.println(m);
-            System.out.println("How many movies you want to checkout?");
-            int num = in.nextInt();
+            int num = Integer.parseInt(amount);
             if(num>m.getNumber())
             {
                 System.out.println("There is not so much movie you want to checkout!");
@@ -226,9 +224,8 @@ public class Library {
         }
     }
 
-    public boolean returnMovie(Customers c,String name)
+    public boolean returnMovie(Customers c,String name, String amount)
     {
-        Scanner in = new Scanner(System.in);
         Map<Movie,Integer> map = c.getMovie();
         Set<Movie> mov = map.keySet();
         Movie tempMovie =null;
@@ -244,8 +241,7 @@ public class Library {
         }
         if(flag)
         {
-            System.out.println("Please input the number of movie you want to return:");
-            int num = in.nextInt();
+            int num = Integer.parseInt(amount);
             if(num > c.getMovie().get(tempMovie))
             {
                 System.out.println("The number is beyond you have checkouted!");
