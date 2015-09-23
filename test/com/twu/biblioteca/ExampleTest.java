@@ -15,7 +15,6 @@ public class ExampleTest {
     public void testQueryBookById() {
 
         Library lib = new Library();
-
         Book b;
         Book b1 = new Book("b0001", "Jane Eyre", "Charlotte Bronte", "UK's Press", "2007-8", 100.00, 5);
 
@@ -25,8 +24,9 @@ public class ExampleTest {
 
     @Test
     public void testQueryCustomersById() {
+
         Library lib = new Library();
-        Customers c1 = new Customers("c0001","Rita");
+        Customers c1 = new Customers("c0001","Rita","001-0001","aaa100","rita@126.com","13720270869");
         Customers c;
 
         c = lib.queryCustomersById("c0001");
@@ -36,8 +36,9 @@ public class ExampleTest {
 
     @Test
     public void testCheckoutBook() {
+
         Library lib = new Library();
-        Customers c1 = new Customers("c0001","Rita");
+        Customers c1 = new Customers("c0001","Rita","001-0001","aaa100","rita@126.com","13720270869");
         boolean result1;
         boolean result2;
         boolean result3;
@@ -54,8 +55,9 @@ public class ExampleTest {
 
     @Test
     public void testReturnBook() {
+
         Library lib = new Library();
-        Customers c1 = new Customers("c0001","Rita");
+        Customers c1 = new Customers("c0001","Rita","001-0001","aaa100","rita@126.com","13720270869");
         boolean result1;
         boolean result2;
         boolean result3;
@@ -78,9 +80,9 @@ public class ExampleTest {
 
     @Test
     public void testCheckoutMovie() {
-        Movie m2 = new Movie("Avatar","James Cameron","2009","8.6",6);
+
         Library lib = new Library();
-        Customers c1 = new Customers("c0001","Rita");
+        Customers c1 = new Customers("c0001","Rita","001-0001","aaa100","rita@126.com","13720270869");
         boolean result1;
         boolean result2;
         boolean result3;
@@ -97,8 +99,9 @@ public class ExampleTest {
 
     @Test
     public void testReturnMovie() {
+
         Library lib = new Library();
-        Customers c1 = new Customers("c0001","Rita");
+        Customers c1 = new Customers("c0001","Rita","001-0001","aaa100","rita@126.com","13720270869");
         boolean result1;
         boolean result2;
         boolean result3;
@@ -117,6 +120,28 @@ public class ExampleTest {
 
         result4 = lib.returnMovie(c1, "Avatar", "3");
         assertEquals(result4, true);
+    }
+
+    @Test
+    public void testShowCustomerInformation() {
+
+        Library lib = new Library();
+        Customers c1 = new Customers("c0001","Rita","001-0001","aaa100","rita@126.com","13720270869");
+        Customers c;
+
+        c = lib.showCustomerInformation("001-0001");
+        assertEquals(c.getCid(), c1.getCid());
+    }
+
+    @Test
+    public void testLogin() {
+
+        Library lib = new Library();
+        boolean result;
+
+        result = lib.Login("001-0001","aaa100");
+        assertEquals(result, true);
+
     }
 
 

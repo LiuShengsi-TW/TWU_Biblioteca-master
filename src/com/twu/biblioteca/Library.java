@@ -29,10 +29,10 @@ public class Library {
         set.add(b4);
         set.add(b5);
 
-        Customers c1 = new Customers("c0001","Rita");
-        Customers c2 = new Customers("c0002","Tom");
-        Customers c3 = new Customers("c0003","Bill");
-        Customers c4 = new Customers("c0004","Wayde");
+        Customers c1 = new Customers("c0001","Rita","001-0001","aaa100","rita@126.com","13720270869");
+        Customers c2 = new Customers("c0002","Tom","001-0002","bbb200","tom@126.com","13307157128");
+        Customers c3 = new Customers("c0003","Bill","001-0003","ccc300","bill@126.com","13349834330");
+        Customers c4 = new Customers("c0004","Wayde","001-0004","ddd400","wayde@126.com","13487651281");
 
         cus.add(c1);
         cus.add(c2);
@@ -66,6 +66,31 @@ public class Library {
             }
         }
         return null;
+    }
+
+    public Customers showCustomerInformation(String libraryNumber) {
+
+
+        for(Customers c:cus)
+        {
+            if(c.getLibraryNumber().equals(libraryNumber)) {
+                System.out.println(c);
+                return c;
+            }
+        }
+        return null;
+    }
+
+    public Boolean Login(String libraryNumber, String password)
+    {
+        for(Customers c:cus)
+        {
+            if( c.getLibraryNumber().equals(libraryNumber) && c.getPassword().equals(password) )
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void queryAllBooks()

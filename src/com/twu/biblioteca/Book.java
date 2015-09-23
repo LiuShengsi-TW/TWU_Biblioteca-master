@@ -4,6 +4,7 @@ package com.twu.biblioteca;
  * Created by ssliu on 9/20/15.
  */
 public class Book {
+
     private String id; // book's ID
     private String name; // book's name
     private String author; // book's author
@@ -93,7 +94,7 @@ public class Book {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
+
         return "ID: "+this.getId()+" Name: "+this.getName()+" Author: "+this.getAuthor()+" Press: "+this.getPress()+" Date: "+this.getDate()+" Price: "+this.getPrice()+" Number: "+this.getNumber();
     }
 

@@ -4,6 +4,7 @@ package com.twu.biblioteca;
  * Created by ssliu on 9/21/15.
  */
 public class Movie {
+
     private String name; // Movie's name
     private String director; // Movie's director
     private String year; // Movie's publish year
